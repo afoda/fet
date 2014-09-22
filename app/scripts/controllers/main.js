@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name jsEartrainerNgApp.controller:MainCtrl
+ * @name fetApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the jsEartrainerNgApp
+ * Controller of the fetApp
  */
-angular.module('jsEartrainerNgApp')
+angular.module('fetApp')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

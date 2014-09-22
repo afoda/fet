@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc overview
- * @name jsEartrainerNgApp
+ * @name fetApp
  * @description
- * # jsEartrainerNgApp
+ * # fetApp
  *
  * Main module of the application.
  */
 angular
-  .module('jsEartrainerNgApp', ['ui.router']);
+  .module('fetApp', ['ui.router']);
