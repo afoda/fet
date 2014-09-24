@@ -15,7 +15,7 @@ angular
   // lodash dependency injection
   .constant('_', window._)
 
-  .config(["$urlRouterProvider", "$stateProvider", function($urlRouterProvider, $stateProvider) {
+  .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
 
     $urlRouterProvider.otherwise('/');
 

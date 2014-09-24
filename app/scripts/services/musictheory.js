@@ -11,17 +11,17 @@ angular.module('fetApp')
   .service('musicTheory', ['_', function musicTheory(_) {
 
     var DIATONIC_SCALE = [2,2,1,2,2,2,1];
-    var MODES_NAMES = ["Ionian", "Aeolian"];
+    var MODES_NAMES = ['Ionian', 'Aeolian'];
 
     function sum(array) {
-        if (array.length == 0) return 0;
+        if (array.length === 0) return 0;
         return _(array).foldl(function(acc, x) { return acc + x; });
     }
 
     function modeDegree(degree, root, mode, scale) {
         // The first instance of the given scale degree above the root.
 
-        scale = scale || DIATONIC_SCALE;
+        var scale = scale || DIATONIC_SCALE;
 
         var steps = scale.concat(scale).slice(mode-1, mode-1 + degree-1);
         var interval = sum(steps);
@@ -32,7 +32,7 @@ angular.module('fetApp')
     function allDegreeNotes(degree, root, mode, low, high, scale) {
         // All instances of the given mode degree in the interval [low, high]
 
-        scale = scale || DIATONIC_SCALE;
+        var scale = scale || DIATONIC_SCALE;
 
         var ref = modeDegree(degree, root, mode, scale);
         // First instance of this scale degree above low.
@@ -48,7 +48,7 @@ angular.module('fetApp')
     function modeNotes(mode, root, low, high, scale) {
         // Notes in the given mode based at ``root`` in the interval [low, high]
         // Returns a list of lists with the note value and its scale degree.
-        scale = scale || DIATONIC_SCALE;
+        var scale = scale || DIATONIC_SCALE;
 
         var allModes = [];
         for (var i = 1; i <= 7; i++) {
