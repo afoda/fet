@@ -29,8 +29,8 @@ describe('Service: musicTheory', function () {
 
   it('calculates diatonic octaves away from the root', function () {
     expect(musicTheory.modeNotes(4, 1, 8, 19)).toEqual([[8,5], [10,6], [12,7], [13,1], [15,2], [17,3], [19,4]]);
-    expect(musicTheory.modeNotes(3, 1, 21, 32)).toEqual([[22,5], [23,6], [25,7], [27,1], [28,2], [30,3], [32,4]]);
-    expect(musicTheory.modeNotes(7, 1, 97, 108)).toEqual([[98,4], [99,5], [101,6], [103,7], [105,1], [106,2], [108,3]]);
+    expect(musicTheory.modeNotes(3, 1, 21, 32)).toEqual([[21,6], [23,7], [25,1], [26,2], [28,3], [30,4], [32,5]]);
+    expect(musicTheory.modeNotes(7, 1, 97, 108)).toEqual([[97,1], [98,2], [100,3], [102,4], [103,5], [105,6], [107,7]]);
   });
 
   it('calculates multiple octaves', function () {
