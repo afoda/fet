@@ -12,6 +12,9 @@
 angular
   .module('fetApp', ['ui.router'])
 
+  // lodash dependency injection
+  .constant('_', window._)
+
   .config(["$urlRouterProvider", "$stateProvider", function($urlRouterProvider, $stateProvider) {
 
     $urlRouterProvider.otherwise('/');
