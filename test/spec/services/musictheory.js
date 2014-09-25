@@ -71,4 +71,25 @@ describe('Service: musicTheory', function () {
     expect(musicTheory.chord(14, 6, 2, true)).toEqual([16, 19, 22, 26]);
   });
 
+  it('calculates cadences in any mode', function () {
+    expect(musicTheory.cadence(1, 1)).toEqual([
+        [1, 5, 8],
+        [6, 10, 13],
+        [8, 12, 15],
+        [1, 5, 8]
+      ]);
+    expect(musicTheory.cadence(5, 3)).toEqual([
+        [5, 8, 12],
+        [10, 13, 17],
+        [12, 15, 18],
+        [5, 8, 12]
+      ]);
+    expect(musicTheory.cadence(12, 6)).toEqual([
+        [12, 15, 19],
+        [17, 20, 24],
+        [19, 22, 26],
+        [12, 15, 19]
+      ]);
+  });
+
 });

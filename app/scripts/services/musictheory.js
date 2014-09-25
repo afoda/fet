@@ -84,9 +84,19 @@ angular.module('fetApp')
         return notes;
     }
 
+    function cadence(root, mode) {
+      return [
+          chord(root, mode, 1),
+          chord(root, mode, 4),
+          chord(root, mode, 5),
+          chord(root, mode, 1)
+        ];
+    }
+
     // Service API
 
     this.modeNotes = modeNotes;
     this.chord = chord;
+    this.cadence = cadence;
 
   }]);
