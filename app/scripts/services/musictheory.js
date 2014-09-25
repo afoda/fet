@@ -11,7 +11,6 @@ angular.module('fetApp')
   .service('musicTheory', ['_', function musicTheory(_) {
 
     var DIATONIC_SCALE = [2,2,1,2,2,2,1];
-    var MODES_NAMES = ['Ionian', 'Aeolian'];
 
     function sum(array) {
         if (array.length === 0) return 0;
