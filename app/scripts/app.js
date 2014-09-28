@@ -15,6 +15,9 @@ angular
   // lodash dependency injection
   .constant('_', window._)
 
+  // MIDI.js dependency injection
+  .constant('MIDI', window.MIDI)
+
   .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
 
     $urlRouterProvider.otherwise('/');
