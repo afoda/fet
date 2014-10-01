@@ -92,10 +92,19 @@ angular.module('fetApp')
         ];
     }
 
+    function noteDuration(value, tempo) {
+        // Second duration of the given note value, in */4 time.
+        // e.g. value = 1/4 represents a quarter note.
+
+        var sec_per_beat = 60 / tempo;
+        return 4 * sec_per_beat * value;
+    }
+
     // Service API
 
     this.modeNotes = modeNotes;
     this.chord = chord;
     this.cadence = cadence;
+    this.noteDuration = noteDuration;
 
   }]);
