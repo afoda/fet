@@ -36,6 +36,17 @@ angular.module('fetApp')
       return delay + (chords.length * t);
     };
 
+    service.playCadence = function(cadence, tempo) {
+      // Play cadence chords as quarter notes followed by a half note
+
+      tempo = tempo || 100;
+
+      var t1 = service.playChords(cadence.slice(0,-1), 1/4);
+      var t2 = service.playChords(cadence.slice(-1), 1/2, t1);
+
+      return t2;
+    }
+
     return service;
 
   }]);

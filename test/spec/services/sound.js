@@ -27,4 +27,9 @@ describe('Service: sound', function () {
     expect(sound.playChords([[], [], [], []], 1/2, 70, 100)).toBe(70 + 8 * 0.6);
   });
 
+  it('calculates the time required to play cadences', function () {
+    expect(sound.playCadence([[], [], [], []], 100)).toBe(5 * 0.6);
+    expect(sound.playCadence([[], [], [], [], []], 100)).toBe(6 * 0.6);
+  });
+
 });
