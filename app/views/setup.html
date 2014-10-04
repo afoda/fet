@@ -1,3 +1,13 @@
+<div ng-controller="StartCtrl">
+  <div ng-hide="filesLoaded">
+    <i class="fa fa-2x fa-spin fa-spinner"></i>
+    <p>Loading sounds...</p>
+  </div>
+  <div ng-show="filesLoaded">
+    <button ui-sref="playing">Start</button>
+  </div>
+</div>
+
 <table class="settings" ng-controller="SettingsCtrl">
   <tbody>
     <tr>
