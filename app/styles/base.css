@@ -26,7 +26,7 @@ button {
     padding: 0.5em 1em;
     color: rgba(255,255,255,1);
     background: rgba(0,0,0,0);
-    border: 2px solid white;
+    border: 1px solid white;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -35,7 +35,7 @@ button {
 button:hover {
     color: rgba(255,255,255,1);
     background: rgba(0,0,0,0);
-    border: 2px solid rgba(59, 123, 205,1);
+    border: 1px solid rgba(59, 123, 205,1);
 }
 
 button:active {
@@ -43,5 +43,5 @@ button:active {
     top: 1px;
     color: rgba(255,255,255,1);
     background: rgba(0,0,0,0);
-    border: 2px solid rgba(7, 78, 169, 1);
+    border: 1px solid rgba(7, 78, 169, 1);
 }
