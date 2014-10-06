@@ -37,10 +37,10 @@ angular.module('fetApp')
 
     function finishQuestion() {
       var keyChanged = set.submitAnswer($scope.selectedNotes);
-      $scope.clearSelectedNotes();
-      $scope.playQuestion(keyChanged);
       if (set.finished)
         $state.go('finished');
+      $scope.clearSelectedNotes();
+      $scope.playQuestion(keyChanged);
     }
 
     $scope.selectNote = function(degree) {
