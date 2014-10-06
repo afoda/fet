@@ -16,7 +16,7 @@ angular.module('fetApp')
       service.question = {};
       service.finished = false;
       service.stats = {
-        currentQuestion: 0,
+        completedQuestions: 0,
         currentScore: 0
       };
       newQuestion();
@@ -24,7 +24,7 @@ angular.module('fetApp')
 
     function newQuestion() {
 
-      var changeKey = service.stats.currentQuestion % settings.cadenceInterval == 0;
+      var changeKey = service.stats.completedQuestions % settings.cadenceInterval == 0;
       if (changeKey)
         randomizeKey();
 
@@ -38,8 +38,6 @@ angular.module('fetApp')
         service.question.notes.push(noteDegrees[i][0]);
         service.question.degrees.push(noteDegrees[i][1]);
       }
-
-      service.stats.currentQuestion += 1;
 
       return changeKey;
     }
@@ -78,7 +76,9 @@ angular.module('fetApp')
     service.submitAnswer = function(answer) {
       scoreAnswer(answer);
 
-      if (service.stats.currentQuestion != settings.questionCount) {
+      service.stats.completedQuestions += 1;
+
+      if (service.stats.completedQuestions < settings.questionCount) {
         return newQuestion();
       }
       else {

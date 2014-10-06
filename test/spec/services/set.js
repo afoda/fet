@@ -14,18 +14,18 @@ describe('Service: set', function () {
   }));
 
   it("starts on question 1", function () {
-    expect(set.stats.currentQuestion).toBe(1);
+    expect(set.stats.completedQuestions).toBe(0);
   });
 
   it("moves to next question after answer is submitted", function () {
     set.submitAnswer([1,2,3]);
-    expect(set.stats.currentQuestion).toBe(2);
+    expect(set.stats.completedQuestions).toBe(1);
   });
 
   it("keeps track of the current question", function () {
     for (var i = 0; i < settings.questionCount / 2; i++)
       set.submitAnswer([1,2,3]);
-    expect(set.stats.currentQuestion).toBe(settings.questionCount/2 + 1);
+    expect(set.stats.completedQuestions).toBe(settings.questionCount/2);
   });
 
   it("does not setS finished state before all questions are answered", function () {

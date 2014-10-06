@@ -39,13 +39,12 @@ describe('Controller: SetCtrl', function () {
   it("submits answer after selecting the right number of notes", function() {
     for (var j = 0; j < settings.harmonicNotes; j++)
       scope.selectNote(3);
-    expect(scope.stats.currentQuestion).toBe(2);
+    expect(scope.stats.completedQuestions).toBe(1);
   });
 
   it("submits the right notes", function() {
     for (var i = 0; i < settings.harmonicNotes; i++)
       scope.selectNote(set.question.degrees[i]);
-    expect(scope.stats.currentQuestion).toBe(2);
     expect(scope.stats.currentScore).toBe(1);
   });
 
