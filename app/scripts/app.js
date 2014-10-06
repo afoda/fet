@@ -20,22 +20,22 @@ angular
 
   .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/setup');
 
     $stateProvider
 
       .state('setup', {
-        url: '/',
+        url: '/setup',
         templateUrl: 'views/setup.html',
       })
 
       .state('playing', {
-        url: '/',
+        url: '/exercise',
         templateUrl: 'views/playing.html',
       })
 
       .state('finished', {
-        url: '/',
+        url: '/exercise',
         templateUrl: 'views/finished.html',
       });
 
