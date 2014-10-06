@@ -1,0 +1,18 @@
+.answers-table {
+  margin: 0 auto;
+}
+
+.answers-table td {
+  padding: 1em 2em;
+  font-size: 1.8em;
+  color: white;
+  cursor: pointer;
+}
+
+table.answers-table td:hover {
+  background: rgba(59, 123, 205, 1);
+}
+
+table.answers-table td:active {
+  background: rgba(7, 78, 169, 1);
+}
