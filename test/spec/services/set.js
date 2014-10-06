@@ -28,6 +28,12 @@ describe('Service: set', function () {
     expect(set.stats.currentQuestion).toBe(settings.questionCount/2 + 1);
   });
 
+  it("does not setS finished state before all questions are answered", function () {
+    for (var i = 0; i < settings.questionCount - 1; i++)
+      set.submitAnswer([1,2,3]);
+    expect(set.finished).toBe(false);
+  });
+
   it("sets finished state after all questions are answered", function () {
     for (var i = 0; i < settings.questionCount; i++)
       set.submitAnswer([1,2,3]);
