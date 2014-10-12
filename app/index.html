@@ -6,37 +6,31 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/pure/pure.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/modules/settings.css" />
+    <link rel="stylesheet" href="styles/modules/start.css" />
+    <link rel="stylesheet" href="styles/modules/answers.css" />
+    <link rel="stylesheet" href="styles/modules/set.css" />
+    <link rel="stylesheet" href="styles/modules/summary.css" />
     <!-- endbuild -->
   </head>
-  <body ng-app="jsEartrainerNgApp">
+  <body ng-app="fetApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">jsEartrainerNg</h3>
-      </div>
-
-      <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
-
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
+    <div id="wrapper">
+      <div ui-view></div>
     </div>
-
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -59,12 +53,30 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <!-- endbower -->
+    <script src="bower_components/midi/js/MIDI/AudioDetect.js"></script>
+    <script src="bower_components/midi/js/MIDI/LoadPlugin.js"></script>
+    <script src="bower_components/midi/js/MIDI/Plugin.js"></script>
+    <script src="bower_components/midi/js/MIDI/Player.js"></script>
+    <script src="bower_components/midi/js/Window/DOMLoader.XMLHttp.js"></script>
+    <script src="bower_components/midi/inc/Base64.js"></script>
+    <script src="bower_components/midi/inc/base64binary.js"></script>
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/filters.js"></script>
+    <script src="scripts/services/musictheory.js"></script>
+    <script src="scripts/services/settings.js"></script>
+    <script src="scripts/services/set.js"></script>
+    <script src="scripts/services/sound.js"></script>
+    <script src="scripts/services/midiloader.js"></script>
+    <script src="scripts/controllers/settings.js"></script>
+    <script src="scripts/controllers/start.js"></script>
+    <script src="scripts/controllers/set.js"></script>
+    <script src="scripts/controllers/summary.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

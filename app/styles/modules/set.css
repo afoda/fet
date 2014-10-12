@@ -1,0 +1,11 @@
+.set-stats {
+  margin: 1em auto 0;
+  max-width: 25em;
+  text-align: left;
+  line-height: 2.8em;
+}
+
+.set-stats > button {
+  margin-left: 0.5em;
+  float: right;
+}

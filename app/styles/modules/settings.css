@@ -1,0 +1,24 @@
+.settings {
+  margin: 0 auto;
+}
+
+.settings-namebox, .settings-valuebox {
+  padding: 1em 1em;
+  width: 12em;
+}
+
+.settings-row {
+  border-bottom: #ccc;
+}
+
+.settings-valuebox {
+  font-size: 1.2em;
+}
+
+.settings-valuebox > input {
+    text-align: center;
+    width: 50%;
+    background: rgba(0,0,0,0);
+    color: white;
+    border: none;
+}
