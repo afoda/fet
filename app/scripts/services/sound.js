@@ -14,11 +14,21 @@ angular.module('fetApp')
 
     var service = {};
 
+    service.soundChord = function(chord, delay) {
+      delay = delay || 0;
+      MIDI.chordOn(0, chord, 127, delay);
+    }
+
+    service.silenceChord = function(chord, delay) {
+      delay = delay || 0;
+      MIDI.chordOff(0, chord, delay);
+    }
+
     function playChord(chord, duration, delay) {
       // Sounds a chord for a given period
 
-      MIDI.chordOn(0, chord, 127, delay);
-      MIDI.chordOff(0, chord, delay + duration);
+      service.soundChord(chord, delay);
+      service.silenceChord(chord, delay + duration);
     }
 
     service.playChords = function(chords, noteValue, delay, tempo) {

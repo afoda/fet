@@ -22,13 +22,21 @@ angular.module('fetApp')
     // Notes selected by the user for the answer
     $scope.selectedNotes = [];
 
+    function soundQuestion(delay) {
+      sound.soundChord(set.question.notes, delay);
+    }
+
+    function silenceQuestion() {
+      sound.silenceChord(set.question.notes);
+    }
+
     $scope.playQuestion = function(withCadence) {
       var cadenceDuration = 0;
       if (withCadence) {
         var cadence = musicTheory.cadence(set.root, settings.getMode());
         cadenceDuration = sound.playCadence(cadence);
       }
-      sound.playChords([set.question.notes], 1/2, cadenceDuration);
+      soundQuestion(cadenceDuration);
     }
 
     $scope.clearSelectedNotes = function () {
@@ -36,6 +44,7 @@ angular.module('fetApp')
     };
 
     function finishQuestion() {
+      silenceQuestion();
       var keyChanged = set.submitAnswer($scope.selectedNotes);
       if (set.finished)
         $state.go('finished');
