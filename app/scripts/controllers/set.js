@@ -46,8 +46,10 @@ angular.module('fetApp')
     function finishQuestion() {
       silenceQuestion();
       var keyChanged = set.submitAnswer($scope.selectedNotes);
-      if (set.finished)
+      if (set.finished) {
         $state.go('finished');
+        return;
+      }
       $scope.clearSelectedNotes();
       $scope.playQuestion(keyChanged);
     }
